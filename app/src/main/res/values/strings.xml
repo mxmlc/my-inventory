@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Meu Estoque</string>
+    <string name="action_search">Localizar</string>
+    <string name="action_add_item">Adicionar item</string>
+    <string name="action_scan_barcode">Ler código de barras</string>
+    <string name="hint_item_name">Nome do item</string>
+    <string name="hint_item_desc">Descrição do item</string>
+    <string name="hint_item_manufacture_date">Data de fabricação</string>
+    <string name="hint_item_valid_thru">Data de validade</string>
+    <string name="hint_item_quantity">Quantidade</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
