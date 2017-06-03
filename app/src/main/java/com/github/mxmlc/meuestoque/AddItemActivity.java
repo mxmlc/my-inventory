@@ -35,6 +35,7 @@ public class AddItemActivity extends AppCompatActivity {
         item = (Item) getIntent().getSerializableExtra(Item.TABLE_NAME);
         if (item != null) {
             helper.fillForm(item);
+            itemQuantity = item.getQuantity();
         }
     }
 
@@ -87,11 +88,13 @@ public class AddItemActivity extends AppCompatActivity {
     public void addItem(View v) {
         ItemDAO dao = new ItemDAO(AddItemActivity.this);
         if (item == null) {
-            dao.persist(helper.getItem());
+            item = helper.getItem();
+            dao.persist(item);
         } else {
             Item localItem = helper.getItem();
             localItem.setId(item.getId());
             dao.update(localItem);
+            item = localItem;
         }
         dao.close();
         Toast.makeText(AddItemActivity.this, "Item " + item.getName() + " cadastrado com sucesso!", Toast.LENGTH_SHORT);

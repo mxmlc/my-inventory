@@ -11,11 +11,16 @@ import java.util.Date;
 public class DateUtil {
 
     public static String formatDate(Date date) {
-        return DateFormat.getDateInstance(DateFormat.MEDIUM).format(date);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String formatedDate = sdf.format(date);
+        return formatedDate;
     }
 
     public static String formatDate(String dateStr) {
-        return DateFormat.getDateInstance(DateFormat.MEDIUM).format(parseDate(dateStr));
+        Date date = parseDate(dateStr);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String formatedDate = sdf.format(date);
+        return formatedDate;
     }
 
     public static Date parseDate(String dateStr) {
