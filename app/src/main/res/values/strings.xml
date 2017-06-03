@@ -1,13 +1,21 @@
 <resources>
     <string name="app_name">Meu Estoque</string>
-    <string name="action_search">Localizar</string>
-    <string name="action_add_item">Adicionar item</string>
-    <string name="action_scan_barcode">Ler código de barras</string>
+    <string name="add_item">Adicionar item</string>
+    <string name="save_item">Salvar item</string>
+    <string name="scan_barcode">Ler código de barras</string>
     <string name="hint_item_name">Nome do item</string>
     <string name="hint_item_desc">Descrição do item</string>
     <string name="hint_item_manufacture_date">Data de fabricação</string>
     <string name="hint_item_valid_thru">Data de validade</string>
     <string name="hint_item_quantity">Quantidade</string>
+
+    <!-- menu list -->
+    <string name="all_items">Todos os itens</string>
+    <string name="overdue_items">Itens vencidos</string>
+    <string name="close_overdue_items">Itens a vencer (30 dias)</string>
+
+    <!-- barcode scanner -->
+    <string name="not_implemented_yet">Ainda não implementado</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

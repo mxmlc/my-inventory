@@ -1,11 +1,29 @@
 package com.github.mxmlc.meuestoque.model;
 
+import com.github.mxmlc.meuestoque.util.DateUtil;
+
+import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
- * Created by fabiano on 28/05/17.
+ * Classe representando a entidade Item.
+ *
+ * @author mxmlc - Fabiano Ramos dos Santos
  */
-public class Item {
+public class Item implements Serializable {
+
+    public enum OVERDUE_IN {
+        INDIFERENT, OVERDUE, CLOSE_OVERDUE;
+    }
+
+    public static String TABLE_NAME = "item";
+    public static String ID_COLUMN = "id";
+    public static String NAME_COLUMN = "name";
+    public static String DESC_COLUMN = "description";
+    public static String MANUFACTURE_COLUMN = "manufacture_date";
+    public static String VALID_THRU_COLUMN = "valid_thru";
+    public static String QUANTITY_COLUMN = "quantity";
 
     private Long id;
     private String name;
@@ -60,5 +78,10 @@ public class Item {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return quantity + " - " + name + " - " + DateUtil.formatDate(validThru);
     }
 }

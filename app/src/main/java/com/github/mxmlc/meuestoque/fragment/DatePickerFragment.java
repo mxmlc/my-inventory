@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.github.mxmlc.meuestoque.util.DateUtil;
+
 import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
- * Created by fabiano on 28/05/17.
+ * Fragmento para apresentação da caixa de diálogo de seleção de data.
+ *
+ * @author mxmlc - Fabiano Ramos dos Santos
  */
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
@@ -37,18 +38,18 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
+    /**
+     * Ao selecionar uma data atualiza o campo em tela.
+     *
+     * @param view
+     * @param year
+     * @param month
+     * @param day
+     */
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
         String dateStr = new StringBuilder().append(day).append("/").append(month + 1).append("/").append(year).toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = null;
-        try {
-            date = sdf.parse(dateStr);
-        } catch (ParseException e) {
-            editText.setText("");
-            return;
-        }
-        editText.setText(DateFormat.getDateInstance(DateFormat.MEDIUM).format(date));
+        editText.setText(DateUtil.formatDate(dateStr));
     }
 
 }

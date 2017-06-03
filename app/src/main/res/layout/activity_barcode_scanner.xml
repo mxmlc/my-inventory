@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context="com.github.mxmlc.meuestoque.BarcodeScannerActivity">
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:text="@string/not_implemented_yet"/>
 
 </LinearLayout>

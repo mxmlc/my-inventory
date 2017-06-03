@@ -11,7 +11,7 @@
     <Button android:id="@+id/scan_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/action_scan_barcode"
+        android:text="@string/scan_barcode"
         android:onClick="callBarcodeScanner"
         ></Button>
 
@@ -87,20 +87,31 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/button_item_decrement"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:text="-"/>
+                android:text="-"
+                android:onClick="decrement"/>
             <TextView
+                android:id="@+id/text_item_quantity"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:text="0"/>
             <Button
+                android:id="@+id/button_item_increment"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:text="+"/>
+                android:text="+"
+                android:onClick="increment"/>
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_item"
+        android:onClick="addItem"/>
 
 </LinearLayout>
